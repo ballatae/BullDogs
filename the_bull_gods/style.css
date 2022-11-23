@@ -1,0 +1,473 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background-color: #e7d6e2;
+}
+
+/* *fit all the web*/
+
+
+/* scroll bar */
+::-webkit-scrollbar {
+    width: 0.8em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #0b0c10;
+    border-radius: 100vw;
+    margin-block: 0.2em;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c5c6c7;
+    border-radius: 100vw;
+    border: 0.1em solid #1f2833;
+    transition: .2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #b5b8ba;
+    border-radius: 150vw;
+}
+
+
+
+/* !------------------------------//////
+!---------------------------------//////
+!-------------NAV BAR-------------//////
+!---------------------------------//////
+!---------------------------------//////
+!---------------------------------/// */
+/* nav bar position diplayed at the top of the page and also being responsive */
+nav {
+    position: sticky;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 8vh;
+    font-family: nasalization, sans-serif;
+    z-index: 1;
+}
+
+/* *nav-bar style */
+
+/* the title of the wesite link properties  */
+.logo {
+    position: relative;
+    align-items: center;
+}
+
+.logo a {
+    position: relative;
+    top: 50%;
+    text-decoration: none;
+    color: #65696b;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+/* the title properties */
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #65696b;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+/* * tech of the future on pc/ logo on moblie*/
+
+.logo_nav {
+    position: relative;
+    width: 15rem;
+}
+
+/* c */
+.logo a {
+    transition: 0.2s;
+}
+
+/* when we hover over the title */
+.logo a:hover {
+    color: #692b5a;
+    cursor: default;
+
+}
+
+/* * logo hover effect*/
+
+/* nav links properties */
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    z-index: +1;
+}
+
+/* li properties so we will remove the dot in the front  */
+.nav-links li {
+    list-style: none;
+}
+
+/* removing the link properties and making it look like the title   */
+.nav-links a {
+    color: #65696b;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* transition used for a smoother hover effect */
+.nav-links a {
+    transition: 0.5s;
+}
+
+/* when we hover over the links on the nav-bar */
+.nav-links a:hover {
+    color: #692b5a;
+    cursor: pointer;
+}
+
+
+
+
+
+/* so the text will be increased a little bit less than the main pages/ 
+since they are sub-pages */
+.sub-menu-1 ul li:hover {
+    font-size: 12px;
+}
+
+/* * till here*/
+
+/* for mobile and tablet use */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+/* when we pres what size will it contain in the page and the transition */
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #c5c6c7;
+    margin: 5px;
+    transition: all 00.3s ease;
+}
+
+/*  nav links style will give it a 60% so the burger nav bar will be hidden  */
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 60%;
+    }
+}
+
+/* whe the max width of the screen is less 
+than 768px  the burger form will be displayed */
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        /* ? so we won't se the side-nav-bar */
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #e7d6e2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        /* ? to remove the side-nav-bar from the screen*/
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        /* ? we won't se the content of the nav */
+    }
+
+    .burger {
+        /* ? we will see only the three lines which will be click able to open the nav*/
+        display: inline-block;
+        z-index: +1;
+
+    }
+
+    .nav-links li:hover .sub-menu-1 ul {
+        display: none;
+    }
+}
+
+/* we use the property in js so it will be  displayed in the page when clicked*/
+.nav-active {
+    transform: translateX(0%);
+}
+
+/* link fade for the pages being displayed */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* when we click the three lines will be transformed in button X */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+
+.intro {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 75%;
+}
+
+.intro h1 {
+    color: #692b5a;
+    font-weight: bolder;
+    position: relative;
+    left: 0;
+}
+
+.mySlides {
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 40rem;
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+
+.slideshow-container img:hover {
+    box-shadow: 7px 5px 4px #692b5a;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    font-weight: bold;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: #1f2833;
+    opacity: 75%;
+    font-size: 23px;
+    color: #45a29e;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+
+}
+
+.next:hover,
+.prev:hover {
+    opacity: 100%;
+}
+
+
+.slideshow-container .dog_description {
+    cursor: default;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    padding-top: 2%;
+    width: 100%;
+    height: 15%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    background-color: #252831;
+    text-align: center;
+    color: #ad759f;
+    font-weight: bold;
+    user-select: none;
+    opacity: 0%;
+    transition: .5s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.slideshow-container:hover .dog_description {
+    opacity: 80%;
+}
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    margin-bottom: 10px;
+    background-color: #c5c6c7;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease-out;
+}
+
+/* style of the dots that tells which one of the images is active */
+/* when we hover over a dot it will change the 
+color and size tellin that we are going to click that on  */
+.active,
+.dot:hover {
+    background-color: #c5c6c7;
+    height: 17px;
+    width: 17px;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/* fade display when we change the image */
+@-webkit-keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+.slideshow-container img {
+    width: 40rem;
+    height: auto;
+}
+
+
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 767px) {
+
+    .slideshow-container {
+        width: 30rem;
+    }
+
+    .slideshow-container img {
+        width: 30rem;
+        height: auto;
+    }
+
+
+
+
+    .prev,
+    .next,
+    .text {
+        font-size: 11px;
+    }
+}
+
+.puppies_container {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    /* align-items: center; */
+    padding: 10rem;
+    place-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.puppies_container div {
+    padding-bottom: 3rem;
+}
+
+.puppies_container div h1 {
+    padding-bottom: 1rem;
+}
+
+.puppies_container div p {
+    padding-bottom: 1.5rem;
+}
+
+.puppies_container img {
+    width: 15rem;
+    height: auto;
+    border-radius: 0;
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    .puppies_container {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+
+    .puppies_container img {
+        width: 12rem;
+        height: auto;
+    }
+}
